@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: rgb(72, 71, 71);
+  padding: 0;
+  margin: 0;
+}
+
+.instructions {
+  position: fixed;
+  left: 250px;
+}
+
+.preview-class {
+  position: fixed;
+  top: 32px;
+  left: 70px;
+}
+
+.position {
+  position: absolute;
+  top: 650px;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+.position .images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+.position .images .nth-child {
+  margin: 0 20px;
+}
+.position .images .nth-child img {
+  width: 200px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.position .images .nth-child img:active {
+  transform: scale(0.9);
+}/*# sourceMappingURL=style.css.map */

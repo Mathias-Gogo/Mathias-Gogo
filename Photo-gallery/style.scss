@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+//variables
+
+$background-color: rgb(72, 71, 71);
+$box-frame: rgb(77, 74, 74);
+
+@mixin flex($direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin position($position){
+    position: $position;
+    top: 650px;
+    backdrop-filter: blur(50px);
+}
+
+body{
+    background: $background-color;
+    padding: 0;
+    margin: 0;
+}
+
+.instructions{
+    position: fixed;
+    left: 250px
+}
+
+.preview-class{
+    position: fixed;
+    top: 32px;
+    left: 70px;
+}
+
+.position{
+    @include position(absolute);
+
+    .images{
+        @include flex(row, center, center);
+        overflow: scroll;
+
+        .nth-child{
+            margin: 0 20px;
+             img{
+                width: 200px;
+                height: auto;
+                transition: transform 0.3s ease-in-out;
+
+                &:active{
+                    transform: scale(0.9);
+                }
+             }
+        }
+    }
+}
